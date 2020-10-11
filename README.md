@@ -1,7 +1,7 @@
 # electron-chat
 <br>
 Steps to run the app locally.
-<br>
+<br><br>
 1)Pull the code from repository.<br>
 2)Navigate to "electron-chat" folder.<br>
 3)Run "npm install"<br>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+    <link rel="stylesheet" href="../src/assets/theme/style/main.css">
+</head>
+
+<body class="default">
+    <div class="notConnected" id="connectionStatusBox"><span id="connectionText">Disconnected</span></div>
+    <div class="themeOptions">
+        <button type="button" id="darkTheme" class="dark">Dark Theme</button>
+        <button type="button" id="lightTheme" class="light">Light Theme</button>
+    </div>
+    <div class="loginWrapper">
+        <div class="loginBox">
+            <form id="loginForm">
+                <h1>Login</h1>
+                <input id="usernameInput" value="test" type="text" placeholder="Username" required="required" />
+                <input id="serverUrlInput" value="ws://localhost:27015" type="text" placeholder="ws://localhost:27015" required="required" />
+                <span class="notice">Server url : ws://localhost:27015</span>
+                <button type="submit" id="loginBtn">Let me in.</button>
+            </form>
+            
+        </div>
+    </div>
+</body>
+<script src="../src/assets/theme/scripts/theme.js"></script>
+<script src="../src/js/login.js"></script>
+</html>

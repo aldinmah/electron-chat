@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+    <link rel="stylesheet" href="../src/assets/theme/style/main.css">
+    <!-- lessc src/assets/theme/style/main.less src/assets/theme/style/main.css -->
+</head>
+
+<body class="default">
+    <div class="notConnected" id="connectionStatusBox"><span id="connectionText">Disconnected</span></div>
+    <div class="dashboardWrapper">
+        <div class="themeOptions">
+            <button type="button" id="darkTheme" class="dark">Dark Theme</button>
+            <button type="button" id="lightTheme" class="light">Light Theme</button>
+        </div>
+        <div class="userGuidBox">
+            <span class="text">Guid: </span>
+            <span id="guidValue"></span>
+        </div>
+        <div class="controlsPanel">
+            <div class="userInfoBox">
+                <span class="text">Welcome </span><span id="username"></span>
+            </div>
+            <div class="userListBox">
+                <span class="text">Number of users online </span><span id="onlineUsers"></span>
+                <ul id="userList"></ul>
+            </div>
+        </div>
+        <div class="chatPanel">
+            <div class="chatUserInfo">Active chat with user : <span id="chatTargetUserGuid"></span></div>
+            <div class="messageList" id="messageList"></div>
+            <input id="messageInput" type="text" placeholder="Enter your message" />
+            <button type="button" id="sendMessage">Send</button>
+        </div>
+    </div>
+</body>
+<script src="../src/assets/theme/scripts/theme.js"></script>
+<script src="../src/js/dashboard.js"></script>
+
+</html>

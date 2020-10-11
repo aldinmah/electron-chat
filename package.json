@@ -1,0 +1,21 @@
+{
+  "name": "tradingapp",
+  "version": "1.0.0",
+  "description": "NA",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "start_browser": "node browser.js",
+    "runServer": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "webtcp": "^1.0.0",
+    "ws": "^7.3.1"
+  },
+  "devDependencies": {
+    "electron": "^10.1.3"
+  }
+}

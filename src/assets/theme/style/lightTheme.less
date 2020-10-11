@@ -1,0 +1,118 @@
+@lightThemeBgColor: #c9d6ff;
+@lightThemeWebkitGradient: -webkit-linear-gradient(to right, #c9d6ff, #e2e2e2);
+@lightThemeGradient: linear-gradient(to right, #c9d6ff, #e2e2e2);
+@lightThemeBaseFontColor: #333;
+@lightThemeBaseChatWindowFontColor: #eee;
+@lightThemeInputBgColor: rgba(255,255,255,0.3);
+@lightThemeInputBoxShadowColor : rgba(255,255,255,0.2), 0 1px 1px rgba(100,100,100,0.2);
+@lightThemeInputBoxShadowColorFocus : rgba(255,255,255,0.4), 0 1px 1px rgba(100,100,100,0.2);
+@lightThemeInputBoxShadowColorError: rgba(255,0,0,0.5), 0 1px 1px rgba(255,255,255,0.2);
+@lightThemeBtnBgColor: #008CBA;
+@lightThemeBtnBgColorHover: #02789e;
+@lightThemeBtnBorderColor: #03789e;
+@lightThemeBtnBorderColorHover: #016282;
+@lightThemeBtnFontColor: #eee;
+@lightThemeStdTransition: all .2s ease;
+@lightThemeChatWindowBgColor: #eee;
+@lightThemeChatWindowBorderColor: #ccc;
+@lightThemeMyMessageBgColor: #ccc;
+@lightThemeNewMsgColor: #f32300;
+@lightThemeActiveUserTextColor: #777;
+@lightThemeUserImage: url(../../images/user_dark.svg);
+
+body.lightTheme{
+    background: @lightThemeBgColor;
+    background: @lightThemeWebkitGradient;
+    background: @lightThemeGradient;
+    color: @lightThemeBaseFontColor;
+    .userGuidBox{
+        color: @lightThemeBaseFontColor;
+    }
+    .dashboardWrapper{
+        .userGuidBox{
+          color: @lightThemeBaseFontColor;
+        }
+        .controlsPanel{
+          background-color: @lightThemeChatWindowBgColor;
+          border: 1px solid @lightThemeChatWindowBorderColor;
+          #userList{
+            border-top: 1px solid @lightThemeChatWindowBorderColor;
+            .clientItem{
+              border-bottom: 1px solid @lightThemeChatWindowBorderColor;
+              -webkit-transition: @lightThemeStdTransition;
+              -moz-transition: @lightThemeStdTransition;
+              -o-transition: @lightThemeStdTransition;
+              -ms-transition: @lightThemeStdTransition;
+              transition: @lightThemeStdTransition;
+              span.userLogo{
+                background-image: @lightThemeUserImage;
+                border: 1px solid @lightThemeBaseFontColor;
+              }
+              .notice{
+                color: @lightThemeNewMsgColor
+              }
+            }
+            .clientItem.selected,
+            .clientItem:focus,
+            .clientItem:hover{
+                background-color: @lightThemeChatWindowBorderColor
+            }
+          }
+        }
+        .chatPanel{
+          .messageList{
+            background-color: @lightThemeChatWindowBgColor;
+            color: @lightThemeBaseFontColor;
+            border: 1px solid @lightThemeChatWindowBorderColor;
+            .chatMessage{
+                .message{
+                    color: @lightThemeBaseFontColor;
+                    background-color: @lightThemeMyMessageBgColor;
+                }
+                .message:after{
+                    content: ' ';
+                    border-color: @lightThemeMyMessageBgColor @lightThemeMyMessageBgColor transparent transparent;
+                }
+                .message.personalMessge:after{      
+                    border-color: @lightThemeBtnBorderColor transparent transparent @lightThemeBtnBorderColor;
+                }
+            }
+          }
+          #sendMessage{
+            background-color: @lightThemeBaseFontColor;
+            border:1px solid @lightThemeBaseFontColor;
+            color: @lightThemeBaseChatWindowFontColor;
+          }
+          .chatUserInfo{
+            background-color: @lightThemeChatWindowBgColor;
+            border: 1px solid @lightThemeChatWindowBorderColor;
+            color: @lightThemeActiveUserTextColor;
+          }
+          #chatTargetUserGuid{
+            color: @lightThemeBaseFontColor;
+          }
+        }
+      }
+    .loginWrapper { 
+        .loginBox{
+            h1{
+                color: @lightThemeBaseFontColor; 
+            }
+            input { 
+                background: @lightThemeInputBgColor;
+                color: @lightThemeBaseFontColor;
+                text-shadow: 1px 1px 1px @lightThemeInputBgColor;
+                border: 1px solid @lightThemeInputBgColor;
+                box-shadow: inset 0 -5px 45px @lightThemeInputBoxShadowColor;
+            }
+            input:focus { box-shadow: inset 0 -5px 45px @lightThemeInputBoxShadowColorFocus}
+            input.error{box-shadow: inset 0 -5px 45px @lightThemeInputBoxShadowColorError}
+
+            button{
+                background-color: @lightThemeBtnBgColor;
+                color: @lightThemeBtnFontColor;
+                border: 1px solid @lightThemeBtnBorderColor;
+            }
+        }
+    }
+  }

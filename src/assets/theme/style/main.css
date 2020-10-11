@@ -1,0 +1,426 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+}
+body.lightTheme {
+  background: #c9d6ff;
+  background: -webkit-linear-gradient(to right, #c9d6ff, #e2e2e2);
+  background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+  color: #333;
+}
+body.lightTheme .userGuidBox {
+  color: #333;
+}
+body.lightTheme .dashboardWrapper .userGuidBox {
+  color: #333;
+}
+body.lightTheme .dashboardWrapper .controlsPanel {
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
+body.lightTheme .dashboardWrapper .controlsPanel #userList {
+  border-top: 1px solid #ccc;
+}
+body.lightTheme .dashboardWrapper .controlsPanel #userList .clientItem {
+  border-bottom: 1px solid #ccc;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+body.lightTheme .dashboardWrapper .controlsPanel #userList .clientItem span.userLogo {
+  background-image: url(../../images/user_dark.svg);
+  border: 1px solid #333;
+}
+body.lightTheme .dashboardWrapper .controlsPanel #userList .clientItem .notice {
+  color: #f32300;
+}
+body.lightTheme .dashboardWrapper .controlsPanel #userList .clientItem.selected,
+body.lightTheme .dashboardWrapper .controlsPanel #userList .clientItem:focus,
+body.lightTheme .dashboardWrapper .controlsPanel #userList .clientItem:hover {
+  background-color: #ccc;
+}
+body.lightTheme .dashboardWrapper .chatPanel .messageList {
+  background-color: #eee;
+  color: #333;
+  border: 1px solid #ccc;
+}
+body.lightTheme .dashboardWrapper .chatPanel .messageList .chatMessage .message {
+  color: #333;
+  background-color: #ccc;
+}
+body.lightTheme .dashboardWrapper .chatPanel .messageList .chatMessage .message:after {
+  content: ' ';
+  border-color: #ccc #ccc transparent transparent;
+}
+body.lightTheme .dashboardWrapper .chatPanel .messageList .chatMessage .message.personalMessge:after {
+  border-color: #03789e transparent transparent #03789e;
+}
+body.lightTheme .dashboardWrapper .chatPanel #sendMessage {
+  background-color: #333;
+  border: 1px solid #333;
+  color: #eee;
+}
+body.lightTheme .dashboardWrapper .chatPanel .chatUserInfo {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  color: #777;
+}
+body.lightTheme .dashboardWrapper .chatPanel #chatTargetUserGuid {
+  color: #333;
+}
+body.lightTheme .loginWrapper .loginBox h1 {
+  color: #333;
+}
+body.lightTheme .loginWrapper .loginBox input {
+  background: rgba(255, 255, 255, 0.3);
+  color: #333;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 -5px 45px rgba(255, 255, 255, 0.2), 0 1px 1px rgba(100, 100, 100, 0.2);
+}
+body.lightTheme .loginWrapper .loginBox input:focus {
+  box-shadow: inset 0 -5px 45px rgba(255, 255, 255, 0.4), 0 1px 1px rgba(100, 100, 100, 0.2);
+}
+body.lightTheme .loginWrapper .loginBox input.error {
+  box-shadow: inset 0 -5px 45px rgba(255, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+body.lightTheme .loginWrapper .loginBox button {
+  background-color: #008CBA;
+  color: #eee;
+  border: 1px solid #03789e;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+body {
+  background: #4B79A1;
+  background: -webkit-linear-gradient(to top, #283E51, #4B79A1);
+  background: linear-gradient(to top, #283E51, #4B79A1);
+  color: #eee;
+}
+body button {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  outline: none;
+}
+body button:hover {
+  transform: scale(1.05);
+}
+body #connectionStatusBox {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  background-color: #ff4f4f;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #eee;
+}
+body #connectionStatusBox.connected {
+  background-color: #00ab00;
+}
+body .userGuidBox {
+  color: #eee;
+  position: absolute;
+  top: 16px;
+  left: 105px;
+  font-size: 10px;
+  font-style: italic;
+}
+body .dashboardWrapper {
+  float: left;
+  width: 100%;
+  height: calc(100% - 60px);
+  padding-top: 55px;
+}
+body .dashboardWrapper .controlsPanel {
+  float: left;
+  width: 30%;
+  margin-left: 20px;
+  padding: 10px;
+  height: 85%;
+  overflow: auto;
+  margin-top: 10px;
+  box-sizing: border-box;
+  background-color: #222;
+  border: 1px solid #444;
+}
+body .dashboardWrapper .controlsPanel #userList {
+  margin: 10px -10px 0 -10px;
+  padding: 0 10px;
+  list-style: none;
+  border-top: 1px solid #444;
+}
+body .dashboardWrapper .controlsPanel #userList .clientItem {
+  padding: 5px 10px 5px 10px;
+  font-size: 18px;
+  border-bottom: 1px solid #444;
+  box-sizing: border-box;
+  line-height: 40px;
+  margin: 0 -10px;
+  position: relative;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+body .dashboardWrapper .controlsPanel #userList .clientItem span.userLogo {
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  background-image: url(../../images/user.svg);
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: 4px 3px;
+  position: relative;
+  top: 7px;
+  margin-right: 8px;
+  border: 1px solid #eee;
+  padding: 4px;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+body .dashboardWrapper .controlsPanel #userList .clientItem span {
+  position: relative;
+  top: -2px;
+  margin-left: 0px;
+}
+body .dashboardWrapper .controlsPanel #userList .clientItem .notice {
+  display: none;
+  font-size: 8px;
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  line-height: normal;
+  color: #00d200;
+}
+body .dashboardWrapper .controlsPanel #userList .clientItem.selected,
+body .dashboardWrapper .controlsPanel #userList .clientItem:focus,
+body .dashboardWrapper .controlsPanel #userList .clientItem:hover {
+  transform: scale(1.035);
+  background-color: #444;
+}
+body .dashboardWrapper .controlsPanel #userList .clientItem.newMessage .notice {
+  display: inline-block;
+}
+body .dashboardWrapper .controlsPanel .userListBox,
+body .dashboardWrapper .controlsPanel .userInfoBox {
+  width: 100%;
+  float: left;
+  font-size: 12px;
+}
+body .dashboardWrapper .chatPanel {
+  float: right;
+  width: 60%;
+  height: calc(100% - 60px);
+  box-sizing: border-box;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+body .dashboardWrapper .chatPanel .messageList {
+  width: 100%;
+  height: 83%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #444;
+  position: relative;
+  margin-top: 5px;
+}
+body .dashboardWrapper .chatPanel .messageList .chatMessage {
+  width: 100%;
+  float: left;
+}
+body .dashboardWrapper .chatPanel .messageList .chatMessage .message {
+  display: block;
+  position: relative;
+  width: auto;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  color: #eee;
+  background-color: #666;
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  max-width: 90%;
+  float: left;
+  font-size: 14px;
+}
+body .dashboardWrapper .chatPanel .messageList .chatMessage .message .msgDate {
+  display: block;
+  font-size: 8px;
+  font-style: italic;
+  margin-top: 5px;
+}
+body .dashboardWrapper .chatPanel .messageList .chatMessage .message.personalMessge {
+  float: right;
+  text-align: right;
+  background-color: #03789e;
+  color: #eee;
+  margin-right: 15px;
+}
+body .dashboardWrapper .chatPanel .messageList .chatMessage .message:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -15px;
+  right: auto;
+  top: 5px;
+  bottom: auto;
+  border: 8px solid;
+  border-color: #666 #666 transparent transparent;
+}
+body .dashboardWrapper .chatPanel .messageList .chatMessage .message.personalMessge:after {
+  left: auto;
+  right: -15px;
+  border-color: #03789e transparent transparent #03789e;
+}
+body .dashboardWrapper .chatPanel .messageList .chatMessage .username {
+  float: left;
+  display: inline-block;
+  max-width: 20%;
+  word-break: break-all;
+  font-size: 12px;
+  max-height: 50px;
+  overflow: hidden;
+}
+body .dashboardWrapper .chatPanel #messageInput {
+  float: left;
+  width: 80%;
+  height: 35px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  font-size: 16px;
+  outline: 0;
+}
+body .dashboardWrapper .chatPanel #sendMessage {
+  float: right;
+  margin-top: 10px;
+  width: 18%;
+  height: 35px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #eee;
+  border: 1px solid #eee;
+  color: #333;
+  cursor: pointer;
+}
+body .dashboardWrapper .chatPanel .chatUserInfo {
+  background-color: #222;
+  border: 1px solid #444;
+  border-radius: 3px;
+  padding: 5px 10px;
+  width: auto;
+  color: #aaa;
+  font-size: 12px;
+}
+body .dashboardWrapper .chatPanel #chatTargetUserGuid {
+  color: #eee;
+}
+body .themeOptions {
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+body .themeOptions button {
+  border-radius: 3px;
+  box-shadow: none;
+  border: 0;
+  padding: 10px 20px;
+  font-size: 12px;
+  display: block;
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+}
+body .themeOptions button.dark {
+  background-color: #333;
+  color: #eee;
+}
+body .themeOptions button.light {
+  background-color: #eee;
+  color: #333;
+  margin-left: 10px;
+}
+body .loginWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+body .loginWrapper .loginBox {
+  width: 300px;
+  height: auto;
+}
+body .loginWrapper .loginBox .notice {
+  font-size: 12px;
+  font-style: italic;
+  display: block;
+  margin-bottom: 10px;
+}
+body .loginWrapper .loginBox h1 {
+  color: #eee;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  text-align: center;
+}
+body .loginWrapper .loginBox input {
+  width: 100%;
+  margin-bottom: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 13px;
+  color: #eee;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  -webkit-transition: box-shadow 0.5s ease;
+  -moz-transition: box-shadow 0.5s ease;
+  -o-transition: box-shadow 0.5s ease;
+  -ms-transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease;
+}
+body .loginWrapper .loginBox input:focus {
+  box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.4), 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+body .loginWrapper .loginBox input.error {
+  box-shadow: inset 0 -5px 45px rgba(255, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+body .loginWrapper .loginBox button {
+  border-radius: 3px;
+  background-color: #008CBA;
+  color: #eee;
+  box-shadow: none;
+  border: 1px solid #03789e;
+  padding: 10px 20px;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}

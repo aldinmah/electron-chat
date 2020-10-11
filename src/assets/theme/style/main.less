@@ -1,0 +1,361 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+@darkThemeBgColor: #4B79A1;
+@darkThemeWebkitGradient: -webkit-linear-gradient(to top, #283E51, #4B79A1);
+@darkThemeGradient: linear-gradient(to top, #283E51, #4B79A1);
+@darkThemeBaseFontColor: #eee;
+@darkThemeBaseChatWindowFontColor: #333;
+@darkThemeInputBgColor: rgba(0,0,0,0.3);
+@darkThemeInputBoxShadowColor : rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+@darkThemeInputBoxShadowColorFocus : rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2);
+@darkThemeInputBoxShadowColorError: rgba(255,0,0,0.5), 0 1px 1px rgba(255,255,255,0.2);
+@darkThemeBtnBgColor: #008CBA;
+@darkThemeBtnBgColorHover: #02789e;
+@darkThemeBtnBorderColor: #03789e;
+@darkThemeBtnBorderColorHover: #016282;
+@darkThemeBtnFontColor: #eee;
+@darkThemeStdTransition: all .2s ease;
+@darkThemeChatWindowBgColor: #222;
+@darkThemeChatWindowBorderColor: #444;
+@darkThemeMyMessageBgColor: #666;
+@darkThemePersonalMsgBgColor: #03789e;
+@darkThemeNewMsgColor: #00d200;
+@darkThemeActiveUserTextColor: #aaa;
+@darkThemeUserImage: url(../../images/user.svg);
+
+@import "lightTheme.less";
+
+
+html,body{
+  width: 100%;
+  height:100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+body {
+	background: @darkThemeBgColor;
+  background: @darkThemeWebkitGradient;
+  background: @darkThemeGradient;
+  color: @darkThemeBaseFontColor;
+
+  button{
+    -webkit-transition: @darkThemeStdTransition;
+    -moz-transition: @darkThemeStdTransition;
+    -o-transition: @darkThemeStdTransition;
+    -ms-transition: @darkThemeStdTransition;
+    transition: @darkThemeStdTransition;
+    outline: none
+  }
+  button:hover{
+    transform: scale(1.05)
+  }
+  #connectionStatusBox{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background-color: #ff4f4f;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: @darkThemeBaseFontColor
+  }
+  #connectionStatusBox.connected{
+    background-color: #00ab00;
+  }
+  .userGuidBox{
+    color: @darkThemeBaseFontColor;
+    position: absolute;
+    top: 16px;
+    left: 105px;
+    font-size: 10px;
+    font-style: italic;
+  }
+  .dashboardWrapper{
+    float: left;
+    width: 100%;
+    height: calc(100% - 60px);
+    padding-top: 55px;
+    .controlsPanel{
+      float: left;
+      width: 30%;
+      margin-left: 20px;
+      padding: 10px;
+      height: 85%;
+      overflow: auto;
+      margin-top: 10px;
+      box-sizing: border-box;
+      background-color: @darkThemeChatWindowBgColor;
+      border: 1px solid @darkThemeChatWindowBorderColor;
+      #userList{
+        margin: 10px -10px 0 -10px;
+        padding: 0 10px;
+        list-style: none;
+        border-top: 1px solid @darkThemeChatWindowBorderColor;
+        .clientItem{
+          padding: 5px 10px 5px 10px;
+          font-size: 18px;
+          border-bottom: 1px solid @darkThemeChatWindowBorderColor;
+          box-sizing: border-box;
+          line-height: 40px;
+          margin: 0 -10px;
+          position: relative;
+          -webkit-transition: @darkThemeStdTransition;
+          -moz-transition: @darkThemeStdTransition;
+          -o-transition: @darkThemeStdTransition;
+          -ms-transition: @darkThemeStdTransition;
+          transition: @darkThemeStdTransition;
+          cursor: pointer;
+          span.userLogo{
+            display: inline-block;
+            height: 28px;
+            width: 28px;
+            background-image: @darkThemeUserImage;
+            background-size: 18px;
+            background-repeat: no-repeat;
+            background-position: 4px 3px;
+            position: relative;
+            top: 7px;
+            margin-right: 8px;
+            border: 1px solid @darkThemeBaseFontColor;
+            padding: 4px;
+            box-sizing: border-box;
+            border-radius: 20px;
+          }
+          span{
+            position: relative;
+            top: -2px;
+            margin-left: 0px;
+          }
+          .notice{
+            display: none;
+            font-size: 8px;
+            position: absolute;
+            right: 10px;
+            top: 4px;
+            line-height: normal;
+            color: @darkThemeNewMsgColor;
+          }
+        }
+        .clientItem.selected,
+        .clientItem:focus,
+        .clientItem:hover{
+          transform: scale(1.035);
+          background-color: @darkThemeChatWindowBorderColor
+        }
+        .clientItem.newMessage {
+          .notice{
+            display: inline-block
+          }
+        }
+      }
+      .userListBox,
+      .userInfoBox{
+        width: 100%;
+        float: left;
+        font-size: 12px
+      }
+    }
+    .chatPanel{
+      float: right;
+      width: 60%;
+      height: calc(100% - 60px);
+      box-sizing: border-box;
+      padding-right: 20px;
+      padding-top: 10px;
+      .messageList{
+        width: 100%;
+        height: 83%;
+        overflow: auto;
+        box-sizing: border-box;
+        padding: 10px;
+        background-color: @darkThemeChatWindowBgColor;
+        color: @darkThemeBaseFontColor;
+        border: 1px solid @darkThemeChatWindowBorderColor;
+        position: relative;
+        margin-top: 5px;
+        .chatMessage{
+          width: 100%;
+          float: left;
+          .message{
+            display: block;
+            position: relative;
+            width: auto;
+            margin-bottom: 5px;
+            margin-left: 10px;
+            color: @darkThemeBaseFontColor;
+            background-color: @darkThemeMyMessageBgColor;
+            border-radius: 5px;
+            padding: 5px 10px;
+            box-sizing: border-box;
+            max-width: 90%;
+            float: left;
+            font-size: 14px;
+            .msgDate{
+              display: block;
+              font-size: 8px;
+              font-style: italic;
+              margin-top: 5px;
+            }
+          }
+          .message.personalMessge{
+            float: right;
+            text-align: right;
+            background-color: @darkThemePersonalMsgBgColor;
+            color: @darkThemeBaseFontColor;
+            margin-right: 15px;
+          }
+          .message:after{
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: -15px;
+            right: auto;
+            top: 5px;
+            bottom: auto;
+            border: 8px solid;
+            border-color: @darkThemeMyMessageBgColor @darkThemeMyMessageBgColor transparent transparent;
+          }
+          .message.personalMessge:after{      
+            left: auto;
+            right: -15px;
+            border-color: @darkThemePersonalMsgBgColor transparent transparent @darkThemePersonalMsgBgColor;
+          }
+          .username{
+            float: left;
+            display: inline-block;
+            max-width: 20%;
+            word-break: break-all;
+            font-size: 12px;
+            max-height: 50px;
+            overflow: hidden;
+          }
+        }
+        
+      }
+      #messageInput{
+        float: left;
+        width: 80%;
+        height: 35px;
+        box-sizing: border-box;
+        margin-top: 10px;
+        font-size: 16px;
+        outline: 0
+      }
+      #sendMessage{
+        float: right;
+        margin-top: 10px;
+        width: 18%;
+        height: 35px;
+        border-radius: 3px;
+        box-sizing: border-box;
+        font-size: 16px;
+        background-color: @darkThemeBaseFontColor;
+        border:1px solid @darkThemeBaseFontColor;
+        color: @darkThemeBaseChatWindowFontColor;
+        cursor: pointer;
+      }
+      .chatUserInfo{
+        background-color: @darkThemeChatWindowBgColor;
+        border: 1px solid @darkThemeChatWindowBorderColor;
+        border-radius: 3px;
+        padding: 5px 10px;
+        width: auto;
+        color: @darkThemeActiveUserTextColor;
+        font-size: 12px;
+      }
+      #chatTargetUserGuid{
+        color: @darkThemeBaseFontColor;
+      }
+    }
+  }
+  
+  .themeOptions{
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: right;
+    padding-right: 20px;
+    box-sizing: border-box;
+    button{
+      border-radius: 3px;
+      box-shadow: none;
+      border: 0;
+      padding: 10px 20px;
+      font-size: 12px;
+      display: block;
+      display: inline-block;
+      outline: 0;
+      cursor: pointer;
+    }
+    button.dark{
+      background-color: @darkThemeBaseChatWindowFontColor;
+      color: @darkThemeBaseFontColor;
+    }
+    button.light{
+      background-color: @darkThemeBaseFontColor;
+      color: @darkThemeBaseChatWindowFontColor;
+      margin-left: 10px
+    }
+    
+  }
+  .loginWrapper { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .loginBox{
+      width: 300px;
+      height: auto;
+      .notice{
+        font-size: 12px;
+        font-style: italic;
+        display: block;
+        margin-bottom: 10px
+      }
+      h1 { 
+        color: @darkThemeBaseFontColor; 
+        text-shadow: 0 0 10px rgba(0,0,0,0.3); 
+        letter-spacing:1px; 
+        text-align:center; 
+      }
+      input { 
+        width: 100%; 
+        margin-bottom: 10px; 
+        background: @darkThemeInputBgColor;
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-size: 13px;
+        color: @darkThemeBaseFontColor;
+        text-shadow: 1px 1px 1px @darkThemeInputBgColor;
+        border: 1px solid @darkThemeInputBgColor;
+        border-radius: 4px;
+        box-shadow: inset 0 -5px 45px @darkThemeInputBoxShadowColor;
+        box-sizing: border-box;
+        -webkit-transition: box-shadow .5s ease;
+        -moz-transition: box-shadow .5s ease;
+        -o-transition: box-shadow .5s ease;
+        -ms-transition: box-shadow .5s ease;
+        transition: box-shadow .5s ease;
+      }
+      input:focus { box-shadow: inset 0 -5px 45px @darkThemeInputBoxShadowColorFocus}
+      input.error{box-shadow: inset 0 -5px 45px @darkThemeInputBoxShadowColorError}
+      button{
+        border-radius: 3px;
+        background-color: @darkThemeBtnBgColor;
+        color: @darkThemeBtnFontColor;
+        box-shadow: none;
+        border: 1px solid @darkThemeBtnBorderColor;
+        padding: 10px 20px;
+        font-size: 16px;
+        display: block;
+        margin: 0 auto;
+        cursor: pointer;
+      }
+    }
+  }
+}

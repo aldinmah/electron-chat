@@ -9,4 +9,5 @@ Steps to run the app locally.
 5)Start as many client applications as you want by opening few terminals and exectute "npm start" in each of them.<br>
 <br>
 Note:<br>
-WebSocket is running on ws://localhost:27015 so if you use some other url or port please be sure to update the server.js file too.
+WebSocket is running on ws://localhost:27015 so if you use some other url or port please be sure to update the server.js file too.<br>
+Ensure you have electron installed, if not you can install it by running this command "npm install electron -g"
